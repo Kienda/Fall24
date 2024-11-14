@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abdoulaye Diallo">
+    <meta name="description" content="tables">
+    <title>Diallo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+
+        caption {
+            caption-side: bottom;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Diallo </h1>
+
+    <nav>
+        <ol>
+            <li><a href="https://www.bmcc.cuny.edu/">BMCC</a></li>
+            <li><a href="https://www.cuny.edu/">CUNY</a></li>
+        </ol>
+        <ul>
+            <li><a href="https://www.example.com/">Example Link 1</a></li>
+            <li><a href="https://www.example.com/">Example Link 2</a></li>
+        </ul>
+    </nav>
+
+    <p>
+        This lab exercise continues Lab #2 Tables. This lab exercise demonstrates how align, valign, colspan, and
+        rowspan work in HTML tables. The first 3 tables demonstrate how content is aligned horizontally (left, center,
+        right) and vertically (top, middle, bottom) in table cells. Table 4 demonstrates the use of colspan and rowspan
+        to merge cells. Table 5 demonstrates how tables can be used to create a skeleton for a web page's layout.
+    </p>
+
+    <!-- Table 1: A simple 5x5 table -->
+    <table cellpadding="10">
+        <caption align="bottom"><strong>Table 2-1:</strong><br />A simple 5x5 table with cellpadding=10 and width=500,
+            expanding the width of the table allows you to see the default left alignment in the table cells</caption>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <!-- Empty div for spacing -->
+    <div>&nbsp;</div>
+
+    <!-- Table 2: Demonstrating default vertical alignment -->
+    <table cellpadding="10">
+        <caption align="bottom"><strong>Table 2:</strong><br />Adding content to cells 1 and 6 allows you to see the
+            default middle vertical alignment</caption>
+        <tr>
+            <td>1 <br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>
+                <img src="giraffe.jpeg" width="107" height="148" alt="3 giraffes" />
+            </td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <!-- Empty div for spacing -->
+    <div>&nbsp;</div>
+
+    <!-- Table 3: Demonstrating align and valign attributes -->
+    <table cellpadding="10">
+        <caption align="bottom"><strong>Table 3:</strong><br />Demonstrating the use of the align and valign attributes
+        </caption>
+        <tr>
+            <td>1 <br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</td>
+            <td>default&nbsp;vertical&nbsp;alignment&nbsp;in&nbsp;this&nbsp;cell</td>
+            <td valign="top">valign="top"</td>
+            <td valign="bottom">valign="bottom"</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>
+                <img src="giraffe.jpeg" width="107" height="148" alt="3 giraffes" />
+            </td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td align="center">align="center"</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Default alignment = left;<br /> no align attribute used in this cell.</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td align="right">align="right"</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <!-- Empty div for spacing -->
+    <div>&nbsp;</div>
+
+    <!-- Table 4: Demonstrating colspan and rowspan attributes -->
+    <table cellpadding="10">
+        <caption align="bottom"><strong>Table 4:</strong><br />Demonstrating the use of the colspan and rowspan
+            attributes</caption>
+        <tr>
+            <td colspan="3">colspan="3"</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td rowspan="4">rowspan="4"</td>
+            <td>7</td>
+            <td>8</td>
+            <td colspan="2" rowspan="3">colspan=2 and rowspan="3" together<br> merge cells in 2 directions</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <footer>
+        <p>HTML Validator: <a
+                href="https://validator.w3.org/#validate_by_input">https://validator.w3.org/#validate_by_input</a></p>
+        <p>CSS Validator: <a
+                href="https://jigsaw.w3.org/css-validator/validator">https://jigsaw.w3.org/css-validator/validator</a>
+        </p>
+        <p>Last update: October 13, 2024</p>
+    </footer>
+</body>
+
+</html>

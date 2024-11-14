@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to manage local storage">
+    <meta name="author" content="Abdoulaye">
+    <title>LocalStorage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    // Function to check if the browser supports localStorage
+    function CheckBrowser() {
+        if ("localStorage" in window && window["localStorage"] !== null) {
+            return true;
+        } else {
+            alert("Sorry, your browser does not support local storage.");
+            return false;
+        }
+    }
+
+    // Function to save an item to localStorage
+    function SaveItem() {
+        var name = document.forms.ShoppingList.name.value;
+        var data = document.forms.ShoppingList.data.value;
+        localStorage.setItem(name, data);
+        doShowAll(); // Refresh the displayed list after saving
+    }
+
+    function RemoveItem() {
+        var name = document.forms.ShoppingList.name.value;
+        document.forms.ShoppingList.data.value =
+            localStorage.removeItem(name);
+        doShowAll();
+    } // end function
+
+    // Function to display all localStorage items in a table
+    function doShowAll() {
+        if (CheckBrowser()) {
+            var list = "<tr><th>Name</th><th>Value</th></tr>\n";
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                list += "<tr><td>" + key + "</td>\n<td>" + localStorage.getItem(key) + "</td></tr>\n";
+            }
+            document.getElementById("list").innerHTML = list;
+
+            if (localStorage.length === 0) {
+                list += "<tr><td>empty</td>\n<td>empty</td></tr>\n";
+                document.getElementById("list").innerHTML = list;
+            }
+        }
+    }
+
+    function ModifyItem() {
+        var name = document.forms.ShoppingList.name.value;
+        document.forms.ShoppingList.data.value =
+            localStorage.getItem(name);
+        doShowAll();
+    } // end function
+
+    function ClearAll() {
+        localStorage.clear();
+        doShowAll();
+    } // end function
+</script>
+
+<body onLoad="doShowAll()">
+    <div class="container">
+        <div class="navBar">
+            <p>Local Storage</p>
+        </div>
+        <div class="main">
+            <div class="storage">
+                <h3>localStorage Manager</h3>
+                <div id="PlayArea">
+                    <form id="ShoppingList">
+                        <table>
+                            <tr>
+                                <td>Name: <input type="text" name="name" /></td>
+                                <td>Value: <input type="text" name="data" /></td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2">
+                                    <input type="button" value="Save" onclick="SaveItem()">
+                                    <input type="button" value="Load/Modify" onclick="ModifyItem()">
+                                    <input type="button" id="removeBtn" value="Remove" onclick="RemoveItem()">
+                                    <input type="button" id="removeBtn" value="Clear All" onclick="ClearAll()">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <h4>Current localStorage</h4>
+                <table id="list" class="details" border="1" cellpadding="5px"></table>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerSection">
+                <p>Local Storage Manager</p>
+            </div>
+            <div class="footerSection">
+                <p>Copy right 2024</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
