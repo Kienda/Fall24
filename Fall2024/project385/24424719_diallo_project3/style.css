@@ -15,14 +15,14 @@ body {
         "main main"
         "footer footer";
     grid-template-rows: auto auto 1fr auto;
-    height: 100vh;
+    min-height: 200vh;
 }
 
 .header {
     grid-area: header;
     padding: 10px;
     text-align: center;
-    background-color: black;
+    background-color: #025048;
     color: white;
 }
 
@@ -34,7 +34,7 @@ body {
 
 .navbar {
     grid-area: navbar;
-    background-color: #f87b29;
+    background-color: #025048;
     min-height: 30px;
 }
 
@@ -57,7 +57,7 @@ body {
 .main {
     grid-area: main;
     padding: 20px;
-    background-color: white;
+    background-color: #025048;
     overflow-y: auto;
 }
 
@@ -81,6 +81,10 @@ body {
     margin: 10px 0;
     padding: 20px;
     border: 1px solid #ccc;
+}
+
+.about-section {
+    color: white;
 }
 
 .footer {
@@ -129,7 +133,7 @@ body {
 }
 
 .product-box button {
-    background-color: #f87b29;
+    background-color: #025048;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -138,12 +142,12 @@ body {
 }
 
 .product-box button:hover {
-    background-color: #d67e1c;
+    background-color: #0e776d;
 }
 
 .contact-section {
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #025048;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px;
@@ -152,7 +156,7 @@ body {
 
 .contact-section h2,
 .contact-section h3 {
-    color: #f87b29;
+    color: #025048;
     margin-bottom: 15px;
 }
 
@@ -196,7 +200,7 @@ body {
 }
 
 .comment-form button {
-    background-color: #f87b29;
+    background-color: #025048;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -207,7 +211,13 @@ body {
 }
 
 .comment-form button:hover {
-    background-color: #d67e1c;
+    background-color: #0e776d;
+}
+
+/* home  */
+.mainHome {
+    min-height: 150vh;
+    background-color: #025048;
 }
 
 @media (max-width: 600px) {
